@@ -1,0 +1,2033 @@
+{
+  "schema_version": 1,
+  "description": "Pavilion exchange SNIP-12 revision 1 test vectors. Each typed_data is exactly what a wallet receives (signTypedData / signMessage); message_hash is what the maker's account signs and order_hash is the order's identity on chain and in the backend.",
+  "chain_id": "SN_SEPOLIA",
+  "chain_id_felt": "0x534e5f5345504f4c4941",
+  "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+  "constants": {
+    "domain": {
+      "name": "Pavilion Market",
+      "version": "1",
+      "chainId": "SN_SEPOLIA",
+      "revision": "1"
+    },
+    "domain_hash": "0x2b4ad2eac49f5a43c846a65bf35e30b2048734c5be4916972500d1162f24843",
+    "order_type_hash": "0x2c71aa86965a43fb7f68d9e765a643564fee8efc08bb084a5f6c225d0e1fb93",
+    "fee_type_hash": "0x12c82fd6d8f5ed6c0e86017e35d6c933a987a3cd7ffe244576b05033bfd7ebd",
+    "u256_type_hash": "0x3b143be38b811560b45593fb2a071ec4ddd0a020e10782be62ffe6f39e0e82c",
+    "bulk_order_type_hash": "0x104e33a39397c82b047b654fb23f762dde5e41e1ff49b005342b7e0b1e9cf19",
+    "bulk_signature_prefix": "0xfefefef0",
+    "is_valid_signature_accepted": [
+      "0x56414c4944 ('VALID')",
+      "0x1"
+    ]
+  },
+  "orders": [
+    {
+      "name": "erc721_listing_with_fees",
+      "description": "ERC721 listing (order_type 1) with a 2.5% platform fee and a 5% royalty",
+      "signer": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "1",
+          "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "36118860384268428696411233411974887681",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "25000000000000000000",
+          "fees": [
+            {
+              "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+              "amount": "625000000000000000"
+            },
+            {
+              "recipient": "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+              "amount": "1250000000000000000"
+            }
+          ],
+          "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+          "nft_id": {
+            "low": "0x7",
+            "high": "0x0"
+          },
+          "nft_amount": "1",
+          "order_validator": "0x0",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0x42348cdc04b62b4d3346a4d36d87150acfd8f23158e7f24e3c12b440411bb78",
+      "message_hash": "0x11a029a984e82c6ba2cc99235ae1d84796e508efd84b468e9ed714a800a3982",
+      "order_hash": "0x11a029a984e82c6ba2cc99235ae1d84796e508efd84b468e9ed714a800a3982",
+      "order_calldata": [
+        "0x1",
+        "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x1b2c3d4e5f60718293a4b5c6d7e8f901",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x15af1d78b58c40000",
+        "0x2",
+        "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+        "0x8ac7230489e8000",
+        "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+        "0x1158e460913d0000",
+        "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+        "0x7",
+        "0x0",
+        "0x1",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "name": "erc721_listing_no_fees",
+      "description": "ERC721 listing without fees. Also the hash buy_erc721 computes for the short form in `short_forms`",
+      "signer": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "1",
+          "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "7",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "12000000000000000000",
+          "fees": [],
+          "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+          "nft_id": {
+            "low": "0x8",
+            "high": "0x0"
+          },
+          "nft_amount": "1",
+          "order_validator": "0x0",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0x520b131c2688598f5f92dd45453048ac86146efccbded2242a9398358843a80",
+      "message_hash": "0x355f510f4788da7ac542383337fe205f1d5e43c13a5dd67b7a5fddd23a05493",
+      "order_hash": "0x355f510f4788da7ac542383337fe205f1d5e43c13a5dd67b7a5fddd23a05493",
+      "order_calldata": [
+        "0x1",
+        "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x7",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0xa688906bd8b00000",
+        "0x0",
+        "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+        "0x8",
+        "0x0",
+        "0x1",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "name": "erc721_item_offer_private_taker",
+      "description": "ERC721 item offer (order_type 0) on the camelCase-only PVL collection, private taker alice, maker counter 2",
+      "signer": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "0",
+          "maker": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+          "taker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "99",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "10000000000000000000",
+          "fees": [
+            {
+              "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+              "amount": "250000000000000000"
+            }
+          ],
+          "nft_address": "0x5f5dfbdfc711337e90d2d1f7ad0080fce443274f2268c614224a79a81484363",
+          "nft_id": {
+            "low": "0x3",
+            "high": "0x0"
+          },
+          "nft_amount": "1",
+          "order_validator": "0x0",
+          "counter": "2"
+        }
+      },
+      "struct_hash": "0x1e6c2e69a8adf3b7147ffdc6cd3b532b43b386b94fa0a9ea8ac78ab697d7de0",
+      "message_hash": "0x13dabe05faeecee575b9da182b61a34a79a63ddaa3b03ff1dec3f030e203a62",
+      "order_hash": "0x13dabe05faeecee575b9da182b61a34a79a63ddaa3b03ff1dec3f030e203a62",
+      "order_calldata": [
+        "0x0",
+        "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+        "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+        "0x68e77800",
+        "0x690f0500",
+        "0x63",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x8ac7230489e80000",
+        "0x1",
+        "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+        "0x3782dace9d90000",
+        "0x5f5dfbdfc711337e90d2d1f7ad0080fce443274f2268c614224a79a81484363",
+        "0x3",
+        "0x0",
+        "0x1",
+        "0x0",
+        "0x2"
+      ]
+    },
+    {
+      "name": "erc721_collection_offer",
+      "description": "ERC721 collection offer (order_type 4) for 5 tokens of any id, nft_id 0",
+      "signer": "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "4",
+          "maker": "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "1",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "50000000000000000000",
+          "fees": [
+            {
+              "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+              "amount": "1250000000000000000"
+            },
+            {
+              "recipient": "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+              "amount": "2500000000000000000"
+            }
+          ],
+          "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+          "nft_id": {
+            "low": "0x0",
+            "high": "0x0"
+          },
+          "nft_amount": "5",
+          "order_validator": "0x0",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0x1a4509ba55d4072bf1aeefd411a3a668f23b49d60aad8584302f6bd34d50a37",
+      "message_hash": "0x643a33e941c557895e569aa1efd9a70da1ca284c8bb2fb6ab30d99dac40d1c3",
+      "order_hash": "0x643a33e941c557895e569aa1efd9a70da1ca284c8bb2fb6ab30d99dac40d1c3",
+      "order_calldata": [
+        "0x4",
+        "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x1",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x2b5e3af16b1880000",
+        "0x2",
+        "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+        "0x1158e460913d0000",
+        "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+        "0x22b1c8c1227a0000",
+        "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+        "0x0",
+        "0x0",
+        "0x5",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "name": "erc721_collection_offer_with_validator",
+      "description": "ERC721 collection offer with an order validator; nft_id carries a merkle root",
+      "signer": "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "4",
+          "maker": "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "2",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "30000000000000000000",
+          "fees": [],
+          "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+          "nft_id": {
+            "low": "0xd5b7f9a2c4e6b8d0f2a4c6e8b1d3f5a7",
+            "high": "0x5a9d1c3e7b2f4a6d8c0e2b4f6a8c1e3"
+          },
+          "nft_amount": "3",
+          "order_validator": "0x7b1d3f5a7c9e1b3d5f7a9c1e3b5d7f9a1c3e5b7d9f1a3c5e7b9d1f3a5c7e9b1",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0xd99834dbb144f6518fa6281e0cf65fe76145b0eeeba2ef776996a6182aa7ff",
+      "message_hash": "0x54d6624f9aa819d0cf5e3bbd4cfe2af9d1fdfbb0d7b28192c775c0ebb039541",
+      "order_hash": "0x54d6624f9aa819d0cf5e3bbd4cfe2af9d1fdfbb0d7b28192c775c0ebb039541",
+      "order_calldata": [
+        "0x4",
+        "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x2",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x1a055690d9db80000",
+        "0x0",
+        "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+        "0xd5b7f9a2c4e6b8d0f2a4c6e8b1d3f5a7",
+        "0x5a9d1c3e7b2f4a6d8c0e2b4f6a8c1e3",
+        "0x3",
+        "0x7b1d3f5a7c9e1b3d5f7a9c1e3b5d7f9a1c3e5b7d9f1a3c5e7b9d1f3a5c7e9b1",
+        "0x0"
+      ]
+    },
+    {
+      "name": "erc1155_listing",
+      "description": "ERC1155 listing (order_type 3) of 100 units of id 42, partially fillable",
+      "signer": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "3",
+          "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "3",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "1000000000000000000000",
+          "fees": [
+            {
+              "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+              "amount": "25000000000000000000"
+            },
+            {
+              "recipient": "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+              "amount": "50000000000000000000"
+            }
+          ],
+          "nft_address": "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+          "nft_id": {
+            "low": "0x2a",
+            "high": "0x0"
+          },
+          "nft_amount": "100",
+          "order_validator": "0x0",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0x4dcea69a6c678c8710a38bd9dea5ec9341f59a9357250f462e3166602568540",
+      "message_hash": "0x5a5b652b988da34808f4a258d97be4cd526ac9138d685b978ad5cc4771308ea",
+      "order_hash": "0x5a5b652b988da34808f4a258d97be4cd526ac9138d685b978ad5cc4771308ea",
+      "order_calldata": [
+        "0x3",
+        "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x3",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x3635c9adc5dea00000",
+        "0x2",
+        "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+        "0x15af1d78b58c40000",
+        "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+        "0x2b5e3af16b1880000",
+        "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+        "0x2a",
+        "0x0",
+        "0x64",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "name": "erc1155_item_offer",
+      "description": "ERC1155 item offer (order_type 2) for 10 units of id 42",
+      "signer": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "2",
+          "maker": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "4",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "90000000000000000000",
+          "fees": [
+            {
+              "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+              "amount": "2250000000000000000"
+            },
+            {
+              "recipient": "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+              "amount": "4500000000000000000"
+            }
+          ],
+          "nft_address": "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+          "nft_id": {
+            "low": "0x2a",
+            "high": "0x0"
+          },
+          "nft_amount": "10",
+          "order_validator": "0x0",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0xad3b52a4516db8142f406d125fa7b17d4bf7b48ed666948992aa56c37a3323",
+      "message_hash": "0x3a82a7012ec17e904f9c96d6cc5aece6ff89cca8cd2dfb82c6c7b455ef12947",
+      "order_hash": "0x3a82a7012ec17e904f9c96d6cc5aece6ff89cca8cd2dfb82c6c7b455ef12947",
+      "order_calldata": [
+        "0x2",
+        "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x4",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x4e1003b28d9280000",
+        "0x2",
+        "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+        "0x1f399b1438a10000",
+        "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+        "0x3e73362871420000",
+        "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+        "0x2a",
+        "0x0",
+        "0xa",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "name": "erc1155_collection_offer",
+      "description": "ERC1155 collection offer (order_type 6) for 20 units of any id",
+      "signer": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "6",
+          "maker": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+          "taker": "0x0",
+          "listing_time": "1760000000",
+          "expiry_time": "1762592000",
+          "salt": "5",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "200000000000000000000",
+          "fees": [],
+          "nft_address": "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+          "nft_id": {
+            "low": "0x0",
+            "high": "0x0"
+          },
+          "nft_amount": "20",
+          "order_validator": "0x0",
+          "counter": "0"
+        }
+      },
+      "struct_hash": "0x71cb6eacca66bf6d2e78901e796dfc767ca5fa5c45774054f2909bcd6ad884d",
+      "message_hash": "0x89d317fed702923d44fd0cdd372bcf92c896990c28d41851198fca1d438121",
+      "order_hash": "0x89d317fed702923d44fd0cdd372bcf92c896990c28d41851198fca1d438121",
+      "order_calldata": [
+        "0x6",
+        "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+        "0x0",
+        "0x68e77800",
+        "0x690f0500",
+        "0x5",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0xad78ebc5ac6200000",
+        "0x0",
+        "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+        "0x0",
+        "0x0",
+        "0x14",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "name": "edge_values",
+      "description": "Encoding edge cases: u256 nft_id with a high part, maximum u128 and u64 values, three fees",
+      "signer": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "Order",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "order_type": "3",
+          "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+          "taker": "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+          "listing_time": "0",
+          "expiry_time": "18446744073709551615",
+          "salt": "340282366920938463463374607431768211455",
+          "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+          "erc20_amount": "340282366920938463463374607431768211455",
+          "fees": [
+            {
+              "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+              "amount": "1"
+            },
+            {
+              "recipient": "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+              "amount": "170141183460469231731687303715884105727"
+            },
+            {
+              "recipient": "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+              "amount": "0"
+            }
+          ],
+          "nft_address": "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+          "nft_id": {
+            "low": "0xffffffffffffffffffffffffffffffff",
+            "high": "0x1"
+          },
+          "nft_amount": "340282366920938463463374607431768211455",
+          "order_validator": "0x0",
+          "counter": "340282366920938463463374607431768211455"
+        }
+      },
+      "struct_hash": "0x57b26681c4aca99b174f3be7581c1ace20037af9a37047d195aac444652fed0",
+      "message_hash": "0x2e7c5b1c9bf59a6dccc94ceb37929141c2647ff58201e351a733e994032ac",
+      "order_hash": "0x2e7c5b1c9bf59a6dccc94ceb37929141c2647ff58201e351a733e994032ac",
+      "order_calldata": [
+        "0x3",
+        "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+        "0x3894f3298abb545c394540ff9c7d079d6be9bf841ebe2cbb5c961333bece104",
+        "0x0",
+        "0xffffffffffffffff",
+        "0xffffffffffffffffffffffffffffffff",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0xffffffffffffffffffffffffffffffff",
+        "0x3",
+        "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+        "0x1",
+        "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+        "0x7fffffffffffffffffffffffffffffff",
+        "0x4c2b104811b11185f53c18f91e380022a796a5944014710d56583804c8ce929",
+        "0x0",
+        "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+        "0xffffffffffffffffffffffffffffffff",
+        "0x1",
+        "0xffffffffffffffffffffffffffffffff",
+        "0x0",
+        "0xffffffffffffffffffffffffffffffff"
+      ]
+    }
+  ],
+  "bulk": [
+    {
+      "name": "bulk_5",
+      "description": "Five orders signed with one bulk signature: two levels of zero padding",
+      "signer": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "BulkOrder": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "orders",
+              "type": "merkletree",
+              "contains": "Order"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "BulkOrder",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "orders": [
+            {
+              "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+              "order_type": "1",
+              "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+              "taker": "0x0",
+              "listing_time": "1760000000",
+              "expiry_time": "1762592000",
+              "salt": "11",
+              "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+              "erc20_amount": "25000000000000000000",
+              "fees": [],
+              "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+              "nft_id": {
+                "low": "0x1",
+                "high": "0x0"
+              },
+              "nft_amount": "1",
+              "order_validator": "0x0",
+              "counter": "0"
+            },
+            {
+              "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+              "order_type": "1",
+              "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+              "taker": "0x0",
+              "listing_time": "1760000000",
+              "expiry_time": "1762592000",
+              "salt": "12",
+              "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+              "erc20_amount": "25000000000000000000",
+              "fees": [
+                {
+                  "recipient": "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+                  "amount": "625000000000000000"
+                },
+                {
+                  "recipient": "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+                  "amount": "1250000000000000000"
+                }
+              ],
+              "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+              "nft_id": {
+                "low": "0x2",
+                "high": "0x0"
+              },
+              "nft_amount": "1",
+              "order_validator": "0x0",
+              "counter": "0"
+            },
+            {
+              "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+              "order_type": "3",
+              "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+              "taker": "0x0",
+              "listing_time": "1760000000",
+              "expiry_time": "1762592000",
+              "salt": "13",
+              "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+              "erc20_amount": "100000000000000000000",
+              "fees": [],
+              "nft_address": "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+              "nft_id": {
+                "low": "0x2a",
+                "high": "0x0"
+              },
+              "nft_amount": "10",
+              "order_validator": "0x0",
+              "counter": "0"
+            },
+            {
+              "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+              "order_type": "0",
+              "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+              "taker": "0x0",
+              "listing_time": "1760000000",
+              "expiry_time": "1762592000",
+              "salt": "14",
+              "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+              "erc20_amount": "5000000000000000000",
+              "fees": [],
+              "nft_address": "0x5f5dfbdfc711337e90d2d1f7ad0080fce443274f2268c614224a79a81484363",
+              "nft_id": {
+                "low": "0x3",
+                "high": "0x0"
+              },
+              "nft_amount": "1",
+              "order_validator": "0x0",
+              "counter": "0"
+            },
+            {
+              "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+              "order_type": "4",
+              "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+              "taker": "0x0",
+              "listing_time": "1760000000",
+              "expiry_time": "1762592000",
+              "salt": "15",
+              "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+              "erc20_amount": "20000000000000000000",
+              "fees": [],
+              "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+              "nft_id": {
+                "low": "0x0",
+                "high": "0x0"
+              },
+              "nft_amount": "2",
+              "order_validator": "0x0",
+              "counter": "0"
+            }
+          ]
+        }
+      },
+      "root": "0x620a012ac8a7e148cb792e67a4cb15fc86390c6ac1db1039cd731bce29caab4",
+      "message_hash": "0x48b5d53293a312698f13701a29c35b45ed07d5d1ee9809fef3f8c1d5422580c",
+      "orders": [
+        {
+          "index": 0,
+          "struct_hash": "0x612c346e0e561863a3a72966ee61fb03d6c8fdccafd044da738bb9095a08007",
+          "order_hash": "0xc3c7d013223fcb27d02e120076f9c1bf784fb6714716758d3c7474e2c40eab",
+          "proof": [
+            "0x553b5d13c5e5e4a70380e93c0e722136eddfaf1c6d9dcd906ecd233423443cd",
+            "0x3da96e537a42aa562340d42da8d5570515add5b7b79d25941643af6586b7c59",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ],
+          "order_calldata": [
+            "0x1",
+            "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+            "0x0",
+            "0x68e77800",
+            "0x690f0500",
+            "0xb",
+            "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+            "0x15af1d78b58c40000",
+            "0x0",
+            "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+            "0x1",
+            "0x0",
+            "0x1",
+            "0x0",
+            "0x0"
+          ],
+          "signature_layout": [
+            "0xfefefef0",
+            "<n>",
+            "<n account signature felts>",
+            "0x553b5d13c5e5e4a70380e93c0e722136eddfaf1c6d9dcd906ecd233423443cd",
+            "0x3da96e537a42aa562340d42da8d5570515add5b7b79d25941643af6586b7c59",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ]
+        },
+        {
+          "index": 1,
+          "struct_hash": "0x553b5d13c5e5e4a70380e93c0e722136eddfaf1c6d9dcd906ecd233423443cd",
+          "order_hash": "0x289dc9919cf8186e1416df202d2232c25425f45c350761174073715294e37f",
+          "proof": [
+            "0x612c346e0e561863a3a72966ee61fb03d6c8fdccafd044da738bb9095a08007",
+            "0x3da96e537a42aa562340d42da8d5570515add5b7b79d25941643af6586b7c59",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ],
+          "order_calldata": [
+            "0x1",
+            "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+            "0x0",
+            "0x68e77800",
+            "0x690f0500",
+            "0xc",
+            "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+            "0x15af1d78b58c40000",
+            "0x2",
+            "0x3e389c14ebd5e4eb9706dfd360f568ce534198240e8316c2ef1863970610153",
+            "0x8ac7230489e8000",
+            "0x279a1e0c1c0b6e2b7f5f0d1c2b3a4958677869504132231405f6e7d8c9ba0b1",
+            "0x1158e460913d0000",
+            "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+            "0x2",
+            "0x0",
+            "0x1",
+            "0x0",
+            "0x0"
+          ],
+          "signature_layout": [
+            "0xfefefef0",
+            "<n>",
+            "<n account signature felts>",
+            "0x612c346e0e561863a3a72966ee61fb03d6c8fdccafd044da738bb9095a08007",
+            "0x3da96e537a42aa562340d42da8d5570515add5b7b79d25941643af6586b7c59",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ]
+        },
+        {
+          "index": 2,
+          "struct_hash": "0x42592ce77bd5b841579a15b0cf00806f11100d09948ff8c98db07d2adc0c16a",
+          "order_hash": "0x5c05d5f0dd59beb4ae6bb1daa2a4c133dfd0b2dba7a7b23feee195ffe1dc4d2",
+          "proof": [
+            "0x2bcef0faa22f715178211d6369ff75821486da95ae78de4e3f4949ee854417d",
+            "0x2fcc25ab30819999b344b7d6f574fb6b97bd86ac78a86ab07d2e3a925cfe6fc",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ],
+          "order_calldata": [
+            "0x3",
+            "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+            "0x0",
+            "0x68e77800",
+            "0x690f0500",
+            "0xd",
+            "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+            "0x56bc75e2d63100000",
+            "0x0",
+            "0x123a5e3c9b1d7f4e2a6c8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0",
+            "0x2a",
+            "0x0",
+            "0xa",
+            "0x0",
+            "0x0"
+          ],
+          "signature_layout": [
+            "0xfefefef0",
+            "<n>",
+            "<n account signature felts>",
+            "0x2bcef0faa22f715178211d6369ff75821486da95ae78de4e3f4949ee854417d",
+            "0x2fcc25ab30819999b344b7d6f574fb6b97bd86ac78a86ab07d2e3a925cfe6fc",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ]
+        },
+        {
+          "index": 3,
+          "struct_hash": "0x2bcef0faa22f715178211d6369ff75821486da95ae78de4e3f4949ee854417d",
+          "order_hash": "0x3caa13e801396205b0a8c6f9c0efadff106b7f1888bc513412955b0f52db3c3",
+          "proof": [
+            "0x42592ce77bd5b841579a15b0cf00806f11100d09948ff8c98db07d2adc0c16a",
+            "0x2fcc25ab30819999b344b7d6f574fb6b97bd86ac78a86ab07d2e3a925cfe6fc",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ],
+          "order_calldata": [
+            "0x0",
+            "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+            "0x0",
+            "0x68e77800",
+            "0x690f0500",
+            "0xe",
+            "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+            "0x4563918244f40000",
+            "0x0",
+            "0x5f5dfbdfc711337e90d2d1f7ad0080fce443274f2268c614224a79a81484363",
+            "0x3",
+            "0x0",
+            "0x1",
+            "0x0",
+            "0x0"
+          ],
+          "signature_layout": [
+            "0xfefefef0",
+            "<n>",
+            "<n account signature felts>",
+            "0x42592ce77bd5b841579a15b0cf00806f11100d09948ff8c98db07d2adc0c16a",
+            "0x2fcc25ab30819999b344b7d6f574fb6b97bd86ac78a86ab07d2e3a925cfe6fc",
+            "0x27e7dde60f9f9ca381f7f81c95f210aa194b1f3d8647f71c654bc38aaa7b17e"
+          ]
+        },
+        {
+          "index": 4,
+          "struct_hash": "0x230c19e640b155069293fe764ff4aa73e42e17a0ce58a354c763998e31c5a93",
+          "order_hash": "0x33b49714f6113b5d58cbcda026573ed21237066e98ec60dd7a9d5549015129e",
+          "proof": [
+            "0x0",
+            "0x0",
+            "0x2d8ae643486266e17aa8bd4acf644af2d5502248c9d1236482413e53dee83af"
+          ],
+          "order_calldata": [
+            "0x4",
+            "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+            "0x0",
+            "0x68e77800",
+            "0x690f0500",
+            "0xf",
+            "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+            "0x1158e460913d00000",
+            "0x0",
+            "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+            "0x0",
+            "0x0",
+            "0x2",
+            "0x0",
+            "0x0"
+          ],
+          "signature_layout": [
+            "0xfefefef0",
+            "<n>",
+            "<n account signature felts>",
+            "0x0",
+            "0x0",
+            "0x2d8ae643486266e17aa8bd4acf644af2d5502248c9d1236482413e53dee83af"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bulk_1",
+      "description": "A bulk of one order: the root is the leaf and the proof is empty",
+      "signer": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+      "typed_data": {
+        "types": {
+          "StarknetDomain": [
+            {
+              "name": "name",
+              "type": "shortstring"
+            },
+            {
+              "name": "version",
+              "type": "shortstring"
+            },
+            {
+              "name": "chainId",
+              "type": "shortstring"
+            },
+            {
+              "name": "revision",
+              "type": "shortstring"
+            }
+          ],
+          "BulkOrder": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "orders",
+              "type": "merkletree",
+              "contains": "Order"
+            }
+          ],
+          "Order": [
+            {
+              "name": "exchange",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "order_type",
+              "type": "u128"
+            },
+            {
+              "name": "maker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "taker",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "listing_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "expiry_time",
+              "type": "timestamp"
+            },
+            {
+              "name": "salt",
+              "type": "u128"
+            },
+            {
+              "name": "erc20_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "erc20_amount",
+              "type": "u128"
+            },
+            {
+              "name": "fees",
+              "type": "Fee*"
+            },
+            {
+              "name": "nft_address",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "nft_id",
+              "type": "u256"
+            },
+            {
+              "name": "nft_amount",
+              "type": "u128"
+            },
+            {
+              "name": "order_validator",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "counter",
+              "type": "u128"
+            }
+          ],
+          "Fee": [
+            {
+              "name": "recipient",
+              "type": "ContractAddress"
+            },
+            {
+              "name": "amount",
+              "type": "u128"
+            }
+          ]
+        },
+        "primaryType": "BulkOrder",
+        "domain": {
+          "name": "Pavilion Market",
+          "version": "1",
+          "chainId": "SN_SEPOLIA",
+          "revision": "1"
+        },
+        "message": {
+          "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+          "orders": [
+            {
+              "exchange": "0x640f3c5b1f0d5e8f1c2a7d9e3b4c5a6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+              "order_type": "1",
+              "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+              "taker": "0x0",
+              "listing_time": "1760000000",
+              "expiry_time": "1762592000",
+              "salt": "16",
+              "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+              "erc20_amount": "25000000000000000000",
+              "fees": [],
+              "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+              "nft_id": {
+                "low": "0x9",
+                "high": "0x0"
+              },
+              "nft_amount": "1",
+              "order_validator": "0x0",
+              "counter": "0"
+            }
+          ]
+        }
+      },
+      "root": "0x154ed8581fbe6c1e1f06d2820ec43ab6072c3ef26268ccc6fbaed855d141821",
+      "message_hash": "0x663eb4362b8dc7ef0975b8bd221eafe24eac18941c638a50f1a90819a5ba9d6",
+      "orders": [
+        {
+          "index": 0,
+          "struct_hash": "0x154ed8581fbe6c1e1f06d2820ec43ab6072c3ef26268ccc6fbaed855d141821",
+          "order_hash": "0x162ea29b2e57327f0af5cc65515cb3d52160352c45a96b0713be0ec3a01c8f",
+          "proof": [],
+          "order_calldata": [
+            "0x1",
+            "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+            "0x0",
+            "0x68e77800",
+            "0x690f0500",
+            "0x10",
+            "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+            "0x15af1d78b58c40000",
+            "0x0",
+            "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+            "0x9",
+            "0x0",
+            "0x1",
+            "0x0",
+            "0x0"
+          ],
+          "signature_layout": [
+            "0xfefefef0",
+            "<n>",
+            "<n account signature felts>"
+          ]
+        }
+      ]
+    }
+  ],
+  "short_forms": [
+    {
+      "name": "buy_erc721_no_fees",
+      "description": "buy_erc721 short form (ERC721SellOrder) and the full order it expands to; both have order_hash of `equals_order`. The counter is read from storage (0 here).",
+      "equals_order": "erc721_listing_no_fees",
+      "erc721_sell_order": {
+        "maker": "0x1f356106346812f62efa9c806313717cb77973a921b00d5b2734d2f2fb922d3",
+        "listing_time": "1760000000",
+        "expiry_time": "1762592000",
+        "salt": "7",
+        "erc20_address": "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "erc20_amount": "12000000000000000000",
+        "fee0_recipient": "0x0",
+        "fee0_amount": "0",
+        "fee1_recipient": "0x0",
+        "fee1_amount": "0",
+        "nft_address": "0x32115d69f363391f2f58cbee093e8b8b26b3df66aa36b3998d6fe75c4f5bc86",
+        "nft_id": {
+          "low": "0x8",
+          "high": "0x0"
+        }
+      }
+    }
+  ]
+}
